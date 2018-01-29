@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 913e9b0b7fc67424d82209e67c6ee5ec
+timeCreated: 1517215367
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: arm_L
+    100002: arm_R
+    100004: base
+    100006: body
+    100008: buik
+    100010: buik_Goal
+    100012: elbow_L
+    100014: elbow_R
+    100016: Enkel_L
+    100018: Enkel_L_Goal
+    100020: Enkel_R
+    100022: Enkel_R_Goal
+    100024: heup_L
+    100026: heup_R
+    100028: Joint_3
+    100030: Joint_3_2
+    100032: Joint_4
+    100034: Joint_4_2
+    100036: Joint_5
+    100038: Joint_5_2
+    100040: Joint_6
+    100042: Joint_7
+    100044: Joint_7_2
+    100046: Joint_8
+    100048: Knie_L
+    100050: Knie_R
+    100052: nek
+    100054: nek_Goal
+    100056: Null
+    100058: pols_L
+    100060: pols_R
+    100062: //RootNode
+    100064: schouders_L
+    100066: schouders_L_Pole
+    100068: schouders_R
+    100070: schouders_R_Pole
+    100072: Sphere_1
+    100074: Symmetry_1
+    400000: arm_L
+    400002: arm_R
+    400004: base
+    400006: body
+    400008: buik
+    400010: buik_Goal
+    400012: elbow_L
+    400014: elbow_R
+    400016: Enkel_L
+    400018: Enkel_L_Goal
+    400020: Enkel_R
+    400022: Enkel_R_Goal
+    400024: heup_L
+    400026: heup_R
+    400028: Joint_3
+    400030: Joint_3_2
+    400032: Joint_4
+    400034: Joint_4_2
+    400036: Joint_5
+    400038: Joint_5_2
+    400040: Joint_6
+    400042: Joint_7
+    400044: Joint_7_2
+    400046: Joint_8
+    400048: Knie_L
+    400050: Knie_R
+    400052: nek
+    400054: nek_Goal
+    400056: Null
+    400058: pols_L
+    400060: pols_R
+    400062: //RootNode
+    400064: schouders_L
+    400066: schouders_L_Pole
+    400068: schouders_R
+    400070: schouders_R_Pole
+    400072: Sphere_1
+    400074: Symmetry_1
+    2300000: Sphere_1
+    3300000: Sphere_1
+    4300000: Sphere_1
+    4300002: Symmetry_1
+    7400000: CINEMA_4D_Main
+    9500000: //RootNode
+    13700000: Symmetry_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CINEMA_4D_Main
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

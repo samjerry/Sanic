@@ -3,23 +3,29 @@ using System.Collections;
 
 public class NormalCamera : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 offset;
+    [SerializeField]private Transform target;
+    [SerializeField]private Vector3 offsetPosition;
+    [SerializeField]private bool lookAt = true;
 
-    [Range(0.01f, 1.0f)]
-    public float smoothspd = 0.5f;  
+    private Space offsetPositionSpace = Space.Self;
 
-    void Start()
+    private void LateUpdate()
     {
-
+        CameraUpdate();
     }
 
-    void FixedUpdate()
-    {
-        Vector3 newPos = player.position + offset;
-        Vector3 smoothedPos = Vector3.Lerp(transform.position, newPos, smoothspd);
-        transform.position = smoothedPos;
+    public void CameraUpdate()
+    {     
+        transform.position = target.TransformPoint(offsetPosition);
 
-        transform.LookAt(player);
+        if (lookAt)
+        {
+            transform.LookAt(target);
+        }
+        else
+        {
+            transform.rotation = target.rotation;
+        }
     }
+
 }

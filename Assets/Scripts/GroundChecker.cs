@@ -8,7 +8,7 @@ public class GroundChecker : MonoBehaviour {
         RaycastHit hit;
         //checks if the player is on the floor or in the air with an raycast
         if (Physics.Raycast(this.transform.position,-transform.up, out hit)){
-            if (hit.distance < 0.2f){
+            if (hit.distance < 0.4f){
                 isGrounded = true;
             }
             else{

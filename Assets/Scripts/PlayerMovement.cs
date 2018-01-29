@@ -3,88 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    private float movementSpeed = 10;
+    private float movementSpeed = 16;
+    private float maxSpeed = 50;
     private float Speedup = 0;
-    public float _maxSpeed = 30;
+    public bool freezeRotation;
+    public Rigidbody rigidBody;
+    public GroundChecker grounded;
+    
 
-    public bool boostTouch;
 
-
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-
+        rigidBody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+        grounded = transform.GetChild(0).GetComponent<GroundChecker>();
         Vector3 movement = new Vector3();
 
-        if (Input.GetKey(KeyCode.W))
-        {
+        //checks if the player is grounded, then slowes him if it is true
+        if (!grounded){
+            Speedup -= 4f;
+        }
+        //Forward movement with an speedup if the player is grounded
+        if (Input.GetKey(KeyCode.W)){
             movement += this.transform.forward;
-            if (Speedup < _maxSpeed)
-            {
-                Speedup += 0.1f;
+            if (Speedup < maxSpeed && grounded.isGrounded){
+                Speedup += 4f;
             }
         }
-        if (Input.GetKey(KeyCode.S))
-        {
+        //backwards movement with an speedup if the player is grounded
+        if (Input.GetKey(KeyCode.S)){
             movement -= this.transform.forward;
-            if (Speedup < _maxSpeed)
-            {
-                Speedup += 0.1f;
+            if (Speedup < maxSpeed && grounded.isGrounded){
+                Speedup += 4f;
             }
         }
-        if (Input.GetKey(KeyCode.D))
-        {
+        //right movement with an speedup if the player is grounded
+        if (Input.GetKey(KeyCode.D)){
             movement += this.transform.right;
-            if (Speedup < _maxSpeed)
-            {
-                Speedup += 0.1f;
+            if (Speedup < maxSpeed && grounded.isGrounded){
+                Speedup += 4f;
             }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
+        //left movement with an speedup if the player is grounded
+        if (Input.GetKey(KeyCode.A)){
             movement -= this.transform.right;
-            if (Speedup < _maxSpeed)
-            {
-                Speedup += 0.1f;
+            if (Speedup < maxSpeed && grounded.isGrounded){
+                Speedup += 4f;
             }
         }
-
-        if (Speedup > _maxSpeed)
+        if(grounded.isGrounded == true)
         {
-            Speedup = _maxSpeed;
+            rigidBody.freezeRotation = false; 
         }
-        if (Speedup < 0)
+        else
         {
+            rigidBody.freezeRotation = true;
+        }
+        if (Speedup > maxSpeed)
+        {
+            Speedup = 30;
+        }
+        if (Speedup < 0){
             Speedup = 0;
         }
-        if (!Input.anyKey)
-        {
+        if (!Input.anyKey){
             Speedup = 0;
         }
         movement.Normalize();
+        //movement speed manager
         this.transform.position += (movement * Time.deltaTime * (movementSpeed + Speedup));
-    }
 
-    void OnTriggerEnter(Collider coll)
-    {
-        if (coll.gameObject.tag == "Boost")
-        {
-            print("touchTrue");
-            boostTouch = true;
-        }
-    }
-
-    void OnTriggerExit(Collider coll)
-    {
-        if (coll.gameObject.tag == "Boost")
-        {
-            boostTouch = false;
-        }
     }
 
 }

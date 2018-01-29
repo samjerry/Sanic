@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedBoostScript : MonoBehaviour
+public class SpeedBoostM : MonoBehaviour
 {
     public Camera camerMain;
     public Camera camerSide;
-    bool boostTouch;
 
     void Start()
     {
-
+        camerMain.enabled = true;
+        camerSide.enabled = false;
     }
 
-    void Update()
+    void OnTriggerEnter(Collider coll)
     {
-        boostTouch = GameObject.Find("Player").GetComponent<PlayerMovement>().boostTouch;
-
-        if (boostTouch == true)
+        if (coll.gameObject.tag == "Boost")
         {
+            print("touchTrue");
             camerMain.enabled = false;
             camerSide.enabled = true;
         }
-        else
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if (coll.gameObject.tag == "Boost")
         {
             camerMain.enabled = true;
             camerSide.enabled = false;

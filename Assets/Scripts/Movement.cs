@@ -12,6 +12,10 @@ public class Movement : MonoBehaviour {
     private GroundChecker groundCheck;
     public bool freezeRotation;
     int layerMask = 1 << 8;
+    public bool boostTouch;
+
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,14 +42,11 @@ public class Movement : MonoBehaviour {
         if (!groundCheck.isGrounded)
         {
             
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
             if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 3,layerMask))
             {
-                print(hit.transform.name);
-                print(hit.point.y);
                 transform.position = hit.point;
-                //transform.position = new Vector3(transform.position.x, (hit.point.y) + transform.position.y/2f, transform.position.z);
                 print("raycast is Active");
             } 
         }
