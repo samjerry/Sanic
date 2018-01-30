@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour {
     public bool isGrounded;
     bool timeTrue;
     int layerMask = 1 << 8;
+    private Vector3 upright;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,12 +38,13 @@ public class Movement : MonoBehaviour {
             Speedup -= 1;
         }
 
-
         RaycastHit hit;
+        //players sticks to the ground
        if (!isGrounded){
             //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit,5 ,layerMask)){
                 transform.position = hit.point;
+                //transform.up = hit.normal;
             }
         }
     }

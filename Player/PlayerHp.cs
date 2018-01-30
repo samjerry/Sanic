@@ -10,5 +10,9 @@ public class PlayerHp : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        if (other.tag == "KillGround")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
