@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
+       
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         translation *= (speed + Speedup)* Time.deltaTime;
@@ -41,13 +42,10 @@ public class Movement : MonoBehaviour {
         RaycastHit hit;
         if (!groundCheck.isGrounded)
         {
-            
-            //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
             if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 3,layerMask))
             {
                 transform.position = hit.point;
-                print("raycast is Active");
             } 
         }
     }

@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    public Camera camerMain;
-    public Camera camerSide;
-    public float overFinish = 2;
+    [SerializeField]
+    private float overFinish = 2;
+
+    public float speed;
+    public bool isFinished = false;
 
     void Start()
     {
-        camerMain.enabled = true;
-        camerSide.enabled = false;
+       
     }
 
     IEnumerator ColFinish()
     {
         while (true)
         {
-           
-            camerMain.enabled = false;
-            camerSide.enabled = true;
-
+            changeAngle();
             yield return new WaitForSeconds(5f);
         }
     }
@@ -37,8 +35,12 @@ public class Finish : MonoBehaviour
             {
                 StartCoroutine(ColFinish());
             }
-
         }
+    }
+
+    void changeAngle()
+    {
+        isFinished = true;
     }
 }
 
