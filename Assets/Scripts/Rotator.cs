@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour {
 
-	public float rSpeed = 1.3f;
+	private float rSpeed = 1.3f;
 
 	private float _spin;
 

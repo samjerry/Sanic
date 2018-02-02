@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour {
 
 	private string _displayTimer;
 
+	[SerializeField]
 	private Text _timerText;
 
 	public void Start(){

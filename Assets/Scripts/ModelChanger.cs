@@ -21,14 +21,11 @@ public class ModelChanger : MonoBehaviour {
 	}
 
 	public void ChangeModel(){
-		Debug.Log ("changing model");
 		if (!ugandan) {
 			GameObject thisModel = Instantiate(_model2, transform.position, transform.rotation) as GameObject;  
 			Destroy(_currentModel);
 			thisModel.transform.parent = transform; 
 			_currentModel = thisModel; 
-			Debug.Log("changed to 1");
-
 			ugandan = true;
 		}
 		else if(ugandan){
@@ -36,8 +33,6 @@ public class ModelChanger : MonoBehaviour {
 			Destroy(_currentModel); 
 			thisModel.transform.parent = transform; 
 			_currentModel = thisModel; 
-			Debug.Log("changed to 2");
-
 			ugandan = false;
 		} 
 	}

@@ -5,50 +5,60 @@ using UnityEngine.UI;
 
 public class CheatCodes : MonoBehaviour {
 
-	public GameObject Cmd;
+	[SerializeField]
+	private GameObject _cmd;
+	[SerializeField]
+	private GameObject _player;
+	[SerializeField]
+	private GameObject _spawn;
 
-	public ModelChanger MC;
+	[SerializeField]
+	private ModelChanger _mC;
 
-	public Timer timer;
+	[SerializeField]
+	private Timer _timer;
 
 	private string _pInput;
 	private string _cInput;
 
 	public void Start(){
-		_pInput = Cmd.GetComponent<InputField>().text;
-		Cmd.SetActive(false);
+		_pInput = _cmd.GetComponent<InputField>().text;
+		_cmd.SetActive(false);
 	}
 
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.BackQuote) || Input.GetKeyDown (KeyCode.Escape)) {
-			if (!Cmd.activeInHierarchy) {
-				Cmd.SetActive (true);
+			if (!_cmd.activeInHierarchy) {
+				_cmd.SetActive (true);
 			} else {
-				Cmd.SetActive (false);
+				_cmd.SetActive (false);
 			}
 		}
-		if (Cmd.activeInHierarchy) {
+		if (_cmd.activeInHierarchy) {
 			ConsoleChecker ();
 		}
 	}
 
 	public void ConsoleChecker(){
 		Debug.Log ("checking console");
-		_pInput = Cmd.GetComponent<InputField>().text;
+		_pInput = _cmd.GetComponent<InputField> ().text;
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			_cInput = _pInput;
 			Debug.Log (_pInput);
 			if (_cInput == "doyouknowdatime?") {
-				timer.Mil = 0; 
-				timer.Sec = 0;
-				timer.Min = 0; 
+				_timer.Mil = 0; 
+				_timer.Sec = 0;
+				_timer.Min = 0; 
 				Debug.Log ("time is 0");
 			} else if (_cInput == "ugandanstyle") {
-				MC.ChangeModel ();
-			} else if (_cInput == "") {
+				_mC.ChangeModel ();
+			} else if (_cInput == "knucklelivesmatter") {
+				Debug.Log ("life is infinite");
 				//pHealth.playerHP = Mathf.Infinity;
-			}  else {
+			} else {
 				//change player's position to start
+				_player.transform.position = _spawn.transform.position;
+				_player.transform.rotation = _spawn.transform.rotation;
 			}
 		}
 	}

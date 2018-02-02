@@ -10,7 +10,7 @@ public class Collectable : MonoBehaviour {
 		_count = GetComponent<ScoreCounter>();
 	}
 
-void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider other) {
 		Debug.Log("touched something");
 	if (other.gameObject.CompareTag ("Player")){
 		Debug.Log ("touched player");
