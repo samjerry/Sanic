@@ -52,9 +52,6 @@ public class CheatCodes : MonoBehaviour {
 				Debug.Log ("time is 0");
 			} else if (_cInput == "ugandanstyle") {
 				_mC.ChangeModel ();
-			} else if (_cInput == "knucklelivesmatter") {
-				Debug.Log ("life is infinite");
-				//pHealth.playerHP = Mathf.Infinity;
 			} else {
 				//change player's position to start
 				_player.transform.position = _spawn.transform.position;
@@ -63,11 +60,3 @@ public class CheatCodes : MonoBehaviour {
 		}
 	}
 }
-
-//else if (_cInput == "partytime" && !isMoving) {
-//	if (MC.ugandan) {
-//		play ugandan knuckels animation (dance)
-//	}else{
-//		play normal knuckles animation (dance)
-//	}
-//}
